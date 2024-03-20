@@ -44,17 +44,22 @@ class Chart extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       width: width,
       height: height,
-      decoration: BoxDecoration(
-        // borderRadius: BorderRadius.circular(8),
-        gradient: LinearGradient(
-          colors: [
-            Theme.of(context).colorScheme.primary.withOpacity(0.3),
-            Theme.of(context).colorScheme.primary.withOpacity(0.0)
-          ],
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-        ),
-      ),
+       decoration: isDarkMode
+        ? BoxDecoration(
+            // Apply gradient background for dark mode
+            gradient: LinearGradient(
+              colors: [
+                Theme.of(context).colorScheme.primary.withOpacity(0.3),
+                Theme.of(context).colorScheme.primary.withOpacity(0.0),
+              ],
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+            ),
+          )
+        : BoxDecoration(
+            // Apply solid color background for light mode
+            color: Theme.of(context).colorScheme.onPrimaryContainer,
+          ),
       child: Column(
         children: [
           Expanded(
