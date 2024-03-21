@@ -37,8 +37,7 @@ class _InformationPageState extends State<InformationPage> {
         children: [
           _buildPage(
             Icons.swipe,
-            '''You can add expenses by inputting the title, amount, date, and category by clicking the "+" button on the app bar.
-            And delete expenses by swipe the item in expenses list''',
+            'You can add expenses by inputting the title, amount, date, and category by clicking the "+" button on the app bar. And delete expenses by swipe the item in expenses list',
             'Swipe to Continue',
             () {
               _pageController.animateToPage(1, duration: const Duration(milliseconds: 500), curve: Curves.ease);
@@ -47,7 +46,7 @@ class _InformationPageState extends State<InformationPage> {
           ),
           _buildPage(
             Icons.check_circle_outline,
-            '''After add or delete expenses, the app will display a chart showing the proportion of each category’s total amount''',
+            'After add or delete expenses, the app will display a chart showing the proportion of each category’s total amount',
             'Finish Tutorial',
             () {
               Navigator.of(context).pop();
@@ -81,20 +80,24 @@ class _InformationPageState extends State<InformationPage> {
           const SizedBox(height: 10.0),
           Transform.translate(
             offset: Offset(textOffset, 0),
-            child: Column(
-              children: [
-                Text(
-                  informationText,
-                  style: const TextStyle(fontSize: 24.0),
-                ),
-                Text(
-                  hintText,
-                  style: const TextStyle(fontSize: 18.0),
-                ),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                children: [
+                  Text(
+                    informationText,
+                    style: const TextStyle(fontSize: 18.0),
+                  ),
+                  const SizedBox(height: 20.0),
+                  Text(
+                    hintText,
+                    style: const TextStyle(fontSize: 16.0),
+                  ),
+                ],
+              ),
             )
           ),
-          const SizedBox(height: 20.0),
+          const SizedBox(height: 0.0),
           Transform.translate(
             offset: Offset(buttonOffset, 0),
             child: ElevatedButton(
