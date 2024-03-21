@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:flutter_app/widgets/new_expense.dart';
+import 'package:flutter_app/widgets/page_view.dart';
 import 'package:flutter_app/widgets/expenses_list/expenses_list.dart';
 import 'package:flutter_app/widgets/expenses_list/expenses_list_sliver.dart';
 import 'package:flutter_app/models/expense.dart';
@@ -63,6 +64,18 @@ class _ExpensesState extends State<Expenses> {
     );
   }
 
+  void _openInformationPage() {
+    showModalBottomSheet(
+      useSafeArea: true,
+      isScrollControlled: true,
+      context: context,
+      builder: (BuildContext context) {
+        return InformationPage();
+      },
+    );
+  }
+
+
   void _addExpense(Expense expense) {
     setState(() {
       _registeredExpenses.add(expense);
@@ -107,6 +120,10 @@ class _ExpensesState extends State<Expenses> {
     return AppBar(
       title: const Text('Expense Tracker'),
       actions: [
+         IconButton(
+          onPressed: _openInformationPage,
+          icon: const Icon(Icons.info),
+        ),
         IconButton(
           onPressed: _openAddExpenseOverlay,
           icon: const Icon(Icons.add),
@@ -134,6 +151,10 @@ class _ExpensesState extends State<Expenses> {
             ),
           ),
           actions: [
+            IconButton(
+              onPressed: _openInformationPage,
+              icon: const Icon(Icons.info),
+            ),
             IconButton(
               onPressed: _openAddExpenseOverlay,
               icon: const Icon(Icons.add),
