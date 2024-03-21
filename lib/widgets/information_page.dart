@@ -59,7 +59,7 @@ class _InformationPageState extends State<InformationPage> {
   }
 
   Widget _buildPage(IconData iconData, String informationText, String hintText, VoidCallback onPressed, String buttonText) {
-    double iconSize = min(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height) / 2;
+    double iconSize = min(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height) / 2.5;
     double textOffset = buttonText == 'Next' ? -(_currentPage * MediaQuery.of(context).size.width / 2)
                                              : MediaQuery.of(context).size.width / 2 
                                                - (_currentPage * MediaQuery.of(context).size.width / 2);
