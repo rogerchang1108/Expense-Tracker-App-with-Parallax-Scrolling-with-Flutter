@@ -58,7 +58,6 @@ class _InformationPageState extends State<InformationPage> {
           Icon(
             iconData,
             size: iconSize ,
-            color: Theme.of(context).colorScheme.primaryContainer,
           ),
           const SizedBox(height: 10.0),
           Text(
