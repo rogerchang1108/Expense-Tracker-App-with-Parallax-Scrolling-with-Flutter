@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'package:flutter_app/widgets/information_page.dart';
 import 'package:flutter_app/widgets/new_expense.dart';
-import 'package:flutter_app/widgets/page_view.dart';
 import 'package:flutter_app/widgets/expenses_list/expenses_list.dart';
 import 'package:flutter_app/widgets/expenses_list/expenses_list_sliver.dart';
 import 'package:flutter_app/models/expense.dart';
