@@ -142,7 +142,7 @@ class _ExpensesState extends State<Expenses> {
           pinned: false,
           flexibleSpace: FlexibleSpaceBar(
             background: Padding(
-              padding: const EdgeInsets.only(top: 80),
+              padding: const EdgeInsets.only(top: 100),
               child: Chart(
                 expenses: _registeredExpenses,
                 width: double.infinity,
