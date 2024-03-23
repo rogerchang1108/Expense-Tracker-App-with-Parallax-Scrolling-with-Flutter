@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'package:flutter_app/widgets/information_page.dart';
 import 'package:flutter_app/widgets/new_expense.dart';
