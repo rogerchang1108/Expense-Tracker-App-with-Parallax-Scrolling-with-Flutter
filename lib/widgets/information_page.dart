@@ -36,8 +36,9 @@ class _InformationPageState extends State<InformationPage> {
         controller: _pageController,
         children: [
           _buildPage(
-            Icons.swipe,
-            'You can add expenses by inputting the title, amount, date, and category by clicking the "+" button on the app bar. And delete expenses by swipe the item in expenses list',
+            0,
+            Icons.add,
+            'Add expenses by clicking "+" on the app bar and filling out the form.',
             'Swipe to Continue',
             () {
               _pageController.animateToPage(1, duration: const Duration(milliseconds: 500), curve: Curves.ease);
@@ -45,8 +46,19 @@ class _InformationPageState extends State<InformationPage> {
             'Next'
           ),
           _buildPage(
+            1,
+            Icons.swipe,
+            'Delete expenses by swiping the item in the expenses list.',
+            'Swipe to Continue',
+            () {
+              _pageController.animateToPage(2, duration: const Duration(milliseconds: 500), curve: Curves.ease);
+            },
+            'Next'
+          ),
+          _buildPage(
+            2,
             Icons.check_circle_outline,
-            'After add or delete expenses, the app will display a chart showing the proportion of each category’s total amount',
+            'Afterward, the chart displays the proportion of the amount for each category.',
             'Finish Tutorial',
             () {
               Navigator.of(context).pop();
@@ -58,14 +70,10 @@ class _InformationPageState extends State<InformationPage> {
     );
   }
 
-  Widget _buildPage(IconData iconData, String informationText, String hintText, VoidCallback onPressed, String buttonText) {
+  Widget _buildPage(int index, IconData iconData, String informationText, String hintText, VoidCallback onPressed, String buttonText) {
     double iconSize = min(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height) / 2.5;
-    double textOffset = buttonText == 'Next' ? -(_currentPage * MediaQuery.of(context).size.width / 2)
-                                             : MediaQuery.of(context).size.width / 2 
-                                               - (_currentPage * MediaQuery.of(context).size.width / 2);
-    double buttonOffset = buttonText == 'Next' ? -(_currentPage * MediaQuery.of(context).size.width)
-                                             : MediaQuery.of(context).size.width 
-                                               - (_currentPage * MediaQuery.of(context).size.width);                                          
+    double textOffset = (MediaQuery.of(context).size.width / 2  * index) - (_currentPage * MediaQuery.of(context).size.width / 2);
+    double buttonOffset = (MediaQuery.of(context).size.width * index) - (_currentPage * MediaQuery.of(context).size.width);                                          
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -81,23 +89,25 @@ class _InformationPageState extends State<InformationPage> {
           Transform.translate(
             offset: Offset(textOffset, 0),
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(10.0),
               child: Column(
                 children: [
                   Text(
                     informationText,
-                    style: const TextStyle(fontSize: 18.0),
+                    style: const TextStyle(fontSize: 20.0),
+                    textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 20.0),
+                  const SizedBox(height: 10.0),
                   Text(
                     hintText,
-                    style: const TextStyle(fontSize: 16.0),
+                    style: const TextStyle(fontSize: 14.0),
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
             )
           ),
-          const SizedBox(height: 0.0),
+          const SizedBox(height: 10.0),
           Transform.translate(
             offset: Offset(buttonOffset, 0),
             child: ElevatedButton(
