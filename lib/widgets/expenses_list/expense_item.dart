@@ -7,7 +7,7 @@ class ExpenseItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey _backgroundImageKey = GlobalKey();
+    final GlobalKey backgroundImageKey = GlobalKey();
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
@@ -17,7 +17,7 @@ class ExpenseItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           child: Stack(
             children: [
-              _buildParallaxBackground(context, _backgroundImageKey),
+              _buildParallaxBackground(context, backgroundImageKey),
               _buildExpenseContent(context),
             ],
           ),
@@ -33,7 +33,7 @@ class ExpenseItem extends StatelessWidget {
       children: [
         Flow(
           delegate: _ParallaxFlowDelegate(
-            scrollable: Scrollable.of(context)!,
+            scrollable: Scrollable.of(context),
             listItemContext: context,
             backgroundImageKey: backgroundImageKey,
           ),
