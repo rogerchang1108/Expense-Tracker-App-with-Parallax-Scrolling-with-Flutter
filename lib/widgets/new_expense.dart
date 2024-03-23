@@ -60,7 +60,7 @@ class _NewExpenseState extends State<NewExpense> {
 
   void _scrollToRenderBox(RenderBox renderBox) async {
     // Wait for the keyboard to fully appear
-    await Future.delayed(Duration(milliseconds: 700));
+    await Future.delayed(const Duration(milliseconds: 700));
 
     final offset = renderBox.localToGlobal(Offset.zero);
     final screenHeight = MediaQuery.of(context).size.height;
@@ -72,7 +72,7 @@ class _NewExpenseState extends State<NewExpense> {
       final scrollOffset = bottomPosition - visibleScreenHeight + 16;
       _scrollController.animateTo(
         _scrollController.offset + scrollOffset,
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         curve: Curves.easeOut,
       );
     }
