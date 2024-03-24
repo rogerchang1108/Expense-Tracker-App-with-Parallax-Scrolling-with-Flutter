@@ -24,7 +24,7 @@ An advanced version of the [Expense Tracker App](https://github.com/rogerchang11
 
 5. There are **Parallax Scrolling** effects on each widget of the tutorial page
     - The text moves at 1.5x moving speed of icon
-    - the button moves at 2.5x moving speed of icon
+    - The button moves at 2.5x moving speed of icon
     - Button: **"Next"** scroll to the next page, **"Done"** dismiss the tutorial
       
     ![component](img/4.gif)
