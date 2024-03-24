@@ -4,25 +4,32 @@ An advanced version of the [Expense Tracker App](https://github.com/rogerchang11
 
 
 ## Features
-1. Add a button on the appbar to navigate to an tutorial page
-  
 
-2. Implement a swipaeble tutorial page with two pages
-    - The pages thould be left-right swipeable
+1. The app now has **Sliver AppBar** and **Sliver ExpensesList** in Portrait mode.
 
+2. The expense list includes **Parallax Scrolling** background pictures for each expense item.
 
-3. Apply parallax scrolling effects on each widget of the tutorial page
-    - The text should move at 1.5x moving speed
-    - the button should move at 2.5x moving speed
+   ![component](img/1.png)
 
+3. The app now will do re-layout in Landscape mode. 
+ 
+   ![component](img/2.png)
 
-4. Program the buttons to perform the following actions
-    - The button on the first page should scroll the page to the second page
-    - The button on the second page should dismiss the tutorial page 
+4. An **"i"** button on the appbar to navigate to an **tutorial page**
+
+5. A swipaeble tutorial with pages is available now.
+    - The pages are left-right swipeable
+
+    ![component](img/3.png)
+
+5. There are **Parallax Scrolling** effects on each widget of the tutorial page
+    - The text moves at 1.5x moving speed of icon
+    - the button moves at 2.5x moving speed of icon
+    - Button: **"Next"** scroll to the next page, **"Done"** dismiss the tutorial
+      
+    ![component](img/4.gif)
 
 ## Resources
-
-A few introductory tutorials crafted to assist you in completing today's lab.
 
 - [PageView](https://api.flutter.dev/flutter/widgets/PageView-class.html)
 - [PageController](https://api.flutter.dev/flutter/painting/TextStyle-class.html)
